@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "edc9529c-dcc4-41c9-b4a1-d81825b2da9c",
+		"name": "IMDB-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8391277"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Utkarsh\",\n    \"lastName\": \"Mehta\",\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2323/api/v1/admin/currentAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"currentAdmin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIzMGQ0Mzc1LTM4ZWQtNDQxYS1hMmI3LThkOGZmOGU2ZWVhMSIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjFUMDQ6MDk6MTUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjFUMDQ6MDk6MTUuMDAwWiIsImlhdCI6MTY2NjMyNTM1OSwiZXhwIjoxNjY2NDExNzU5fQ.uGbV6xQNdfMuRbj1WQl9qI7OF95us9iqUjHrvHjFTkw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Utkarsh\",\n    \"lastName\": \"Mehta\",\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/currentUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"currentUser"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2323/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2323",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiMWU0N2JjLTM5MTItNDcwMy1hOWQ5LWYyMjA5N2JlMDI3YSIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjFUMDM6MzY6MDkuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjFUMDM6MzY6MDkuMDAwWiIsImlhdCI6MTY2NjMyNDMyNCwiZXhwIjoxNjY2NDEwNzI0fQ.3fH_RyZT-UWnLcu1qcJMBCroLgMJZdAnKlLbDaH90Bk",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
