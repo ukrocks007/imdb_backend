@@ -3,6 +3,7 @@ const router = Router();
 const { Op } = require("sequelize");
 const jwt = require('jsonwebtoken');
 const config = require('../config');
+const authenticate = require('../middleware/authenticate');
 
 router.post('/user/login', async (req, res) => {
     try {
@@ -19,6 +20,7 @@ router.post('/user/login', async (req, res) => {
                 ]
             }
         });
+        user.password = undefined;
         const token = jwt.sign(JSON.parse(JSON.stringify(user)), config.jwtSecret, { expiresIn: `${24 * 60 * 60} s` });
         res.status(user ? 200 : 404).json({
             success: !!user,
@@ -51,5 +53,12 @@ router.post('/user/signup', async (req, res) => {
         res.status(400).json(ex);
     }
 });
+
+router.get('/user/currentUser', authenticate, async(req, res) => {
+    res.status(200).json({
+        success: true,
+        user: req.user
+    });
+})
 
 module.exports = router;
