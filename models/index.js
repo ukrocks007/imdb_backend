@@ -26,15 +26,22 @@ async function initialize() {
     const { mysqlHost, mysqlPort, mysqlUser, mysqlPassword, mysqlDatabase } =
         config;
 
-    const connection = await mysql.createConnection({
+    let connection = await mysql.createConnection({
+        host: mysqlHost,
+        port: Number(mysqlPort),
+        user: mysqlUser,
+        password: mysqlPassword,
+    });
+
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${mysqlDatabase}\`;`);
+
+    connection = await mysql.createConnection({
         host: mysqlHost,
         port: Number(mysqlPort),
         user: mysqlUser,
         password: mysqlPassword,
         database: mysqlDatabase,
     });
-
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${mysqlDatabase}\`;`);
 
     try {
         await sequelize.authenticate();
