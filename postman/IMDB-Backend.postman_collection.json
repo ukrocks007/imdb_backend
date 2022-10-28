@@ -7,6 +7,115 @@
 	},
 	"item": [
 		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Utkarsh\",\n    \"lastName\": \"Mehta\",\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/currentUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"currentUser"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Admin",
 			"item": [
 				{
@@ -126,24 +235,25 @@
 			]
 		},
 		{
-			"name": "User",
+			"name": "Upload",
 			"item": [
 				{
-					"name": "Signup",
+					"name": "Upload file",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Utkarsh\",\n    \"lastName\": \"Mehta\",\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "upload",
+									"type": "file",
+									"src": "/Users/utkarshmehta/Downloads/screencapture-app-rationarium-app-profit-loss-2022-10-19-16_12_45.png"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://localhost:2323/api/v1/user/signup",
+							"raw": "http://localhost:2323/api/v1/upload",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -152,51 +262,19 @@
 							"path": [
 								"api",
 								"v1",
-								"user",
-								"signup"
+								"upload"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:2323/api/v1/user/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "2323",
-							"path": [
-								"api",
-								"v1",
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Current User",
+					"name": "Get Upload file",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:2323/api/v1/user/currentUser",
+							"raw": "http://localhost:2323/api/v1/upload/9c687b1a6a1d1c2a8042d07527ec041b/base64",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -205,32 +283,332 @@
 							"path": [
 								"api",
 								"v1",
-								"user",
-								"currentUser"
+								"upload",
+								"9c687b1a6a1d1c2a8042d07527ec041b",
+								"base64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upload",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2323/api/v1/upload/5970b34c-7262-481c-860a-d7b047c58914",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"upload",
+								"5970b34c-7262-481c-860a-d7b047c58914"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"event": [
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							]
+						}
+					},
+					"response": []
 				},
 				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/movie/6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2103\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/movie/6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2103\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/movie/6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"movie",
+								"6b6c9cff-fd0b-4fea-a0e6-8e4e2dae4a77"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movieId\": \"fdd2eb42-d153-49c5-9a4d-178ebc1b257a\",\n    \"star\": 9\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating/9e673d36-f0b6-4c4b-90d0-3ca8f6e6743e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating",
+								"9e673d36-f0b6-4c4b-90d0-3ca8f6e6743e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Movie id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating/movie/fdd2eb42-d153-49c5-9a4d-178ebc1b257a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating",
+								"movie",
+								"fdd2eb42-d153-49c5-9a4d-178ebc1b257a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"star\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating/fc17ffd5-4810-419a-ae4c-e06b311d3c36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating",
+								"fc17ffd5-4810-419a-ae4c-e06b311d3c36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2103\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating/fc17ffd5-4810-419a-ae4c-e06b311d3c36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating",
+								"fc17ffd5-4810-419a-ae4c-e06b311d3c36"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -259,7 +637,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiMWU0N2JjLTM5MTItNDcwMy1hOWQ5LWYyMjA5N2JlMDI3YSIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjFUMDM6MzY6MDkuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjFUMDM6MzY6MDkuMDAwWiIsImlhdCI6MTY2NjMyNDMyNCwiZXhwIjoxNjY2NDEwNzI0fQ.3fH_RyZT-UWnLcu1qcJMBCroLgMJZdAnKlLbDaH90Bk",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlZDA2NjA0LTJjMjQtNGNmMS05MTViLWQwMjEyMjRhY2JjZCIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjdUMDQ6Mjk6MDEuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjdUMDQ6Mjk6MDEuMDAwWiIsImlhdCI6MTY2Njg0NDk0MywiZXhwIjoxNjY2OTMxMzQzfQ.-FRWhy5MhJFk9GI6NO9ZiSmPbefmyLb0Qyucil_Bwc0",
 				"type": "string"
 			}
 		]
