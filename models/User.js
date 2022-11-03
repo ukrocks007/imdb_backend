@@ -17,6 +17,7 @@ const User = {
     },
     email : {
         type      : DataTypes.STRING(256),
+        unique    : true,
         allowNull : true
     },
     password : {
