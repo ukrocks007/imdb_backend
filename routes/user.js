@@ -44,7 +44,7 @@ router.post('/user/login', async (req, res) => {
 router.post('/user/signup', async (req, res) => {
     try {
         const User = require('../models').User;
-        const user = await User.create({
+        await User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
@@ -52,7 +52,6 @@ router.post('/user/signup', async (req, res) => {
         });
         res.status(201).json({
             success: true,
-            user,
             message: 'User signed up!'
         });
     } catch (ex) {
