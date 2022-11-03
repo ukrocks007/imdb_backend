@@ -21,7 +21,7 @@ router.post('/user/login', async (req, res) => {
             }
         });
         if(!user) {
-            res.status(400).json({
+            res.status(200).json({
                 success: false,
                 message: 'Invalid email or password'
             });
