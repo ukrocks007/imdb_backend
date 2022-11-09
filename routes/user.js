@@ -37,7 +37,29 @@ router.post('/user/login', async (req, res) => {
         }
     } catch (ex) {
         console.log(ex);
-        res.status(400).json({success: false, message: ex.message});
+        res.status(400).json({ success: false, message: ex.message });
+    }
+});
+
+router.post('/user/checkEmail', async (req, res) => {
+    try {
+        const User = require('../models').User;
+        const user = await User.findOne({
+            where:
+            {
+                email: req.body.email
+            }
+        });
+        if (user) {
+            throw new Error("User already registered!");
+        } else {
+            res.status(200).json({
+                success: true
+            });
+        }
+    } catch (ex) {
+        console.log(ex);
+        res.status(400).json({ success: false, message: ex.message });
     }
 });
 
@@ -50,7 +72,7 @@ router.post('/user/signup', async (req, res) => {
                 email: req.body.email
             }
         });
-        if(user) {
+        if (user) {
             throw new Error("User already registered!");
         }
         await User.create({
@@ -65,7 +87,7 @@ router.post('/user/signup', async (req, res) => {
         });
     } catch (ex) {
         console.log(ex);
-        res.status(400).json({success: false, message: ex.message});
+        res.status(400).json({ success: false, message: ex.message });
     }
 });
 
