@@ -44,6 +44,7 @@ router.post('/user/login', async (req, res) => {
 router.post('/user/checkEmail', async (req, res) => {
     try {
         const User = require('../models').User;
+        if (req.body.email) {
         const user = await User.findOne({
             where:
             {
@@ -57,6 +58,9 @@ router.post('/user/checkEmail', async (req, res) => {
                 success: true
             });
         }
+    } else {
+        throw new Error("Email not provided!");
+    }
     } catch (ex) {
         console.log(ex);
         res.status(400).json({ success: false, message: ex.message });
