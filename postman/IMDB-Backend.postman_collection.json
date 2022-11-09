@@ -41,6 +41,37 @@
 					"response": []
 				},
 				{
+					"name": "Check Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Utkarsh\",\n    \"lastName\": \"Mehta\",\n    \"email\": \"utkarsh.mehta@gmail.com\",\n    \"password\": \"qwerty@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/user/checkEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"checkEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Login",
 					"request": {
 						"method": "POST",
@@ -274,7 +305,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:2323/api/v1/upload/9c687b1a6a1d1c2a8042d07527ec041b/base64",
+							"raw": "http://localhost:2323/api/v1/upload/938f090817f39b31e92c90dee6a36d9a/base64",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -284,7 +315,7 @@
 								"api",
 								"v1",
 								"upload",
-								"9c687b1a6a1d1c2a8042d07527ec041b",
+								"938f090817f39b31e92c90dee6a36d9a",
 								"base64"
 							]
 						}
@@ -297,7 +328,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:2323/api/v1/upload/5970b34c-7262-481c-860a-d7b047c58914",
+							"raw": "http://localhost:2323/api/v1/upload/2b1710a4-46fc-4efb-9c74-57450a255b02",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -307,7 +338,7 @@
 								"api",
 								"v1",
 								"upload",
-								"5970b34c-7262-481c-860a-d7b047c58914"
+								"2b1710a4-46fc-4efb-9c74-57450a255b02"
 							]
 						}
 					},
@@ -637,7 +668,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlZDA2NjA0LTJjMjQtNGNmMS05MTViLWQwMjEyMjRhY2JjZCIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjdUMDQ6Mjk6MDEuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjdUMDQ6Mjk6MDEuMDAwWiIsImlhdCI6MTY2Njg0NDk0MywiZXhwIjoxNjY2OTMxMzQzfQ.-FRWhy5MhJFk9GI6NO9ZiSmPbefmyLb0Qyucil_Bwc0",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgzZTgzYTkwLTE5NzYtNGYxZC05MTk5LTljZjYzZjE5MGMxYiIsImZpcnN0TmFtZSI6IlV0a2Fyc2giLCJsYXN0TmFtZSI6Ik1laHRhIiwiZW1haWwiOiJ1dGthcnNoLm1laHRhQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMTAtMjhUMDQ6MTg6NDguMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMTAtMjhUMDQ6MTg6NDguMDAwWiIsImlhdCI6MTY2NjkzMDc0OSwiZXhwIjoxNjY3MDE3MTQ5fQ.tCJteTypqr31LGtMiuV9136OmU5UFge89MN8jGaoRzE",
 				"type": "string"
 			}
 		]
