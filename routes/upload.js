@@ -54,12 +54,12 @@ router.get('/upload/:id', authenticate, async (req, res) => {
     }
 });
 
-router.get('/upload/:filename/base64', authenticate, async (req, res) => {
+router.get('/upload/:uploadId/base64', authenticate, async (req, res) => {
     try {
         const Upload = require('../models').Upload;
         const upload = await Upload.findOne({
             where: {
-                name: req.params.filename,
+                id: req.params.uploadId,
             }
         });
         let buffer = await fs.readFileSync(dirname(require.main.filename) + upload.file, { encoding: 'base64' })
