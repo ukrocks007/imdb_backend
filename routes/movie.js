@@ -23,6 +23,21 @@ router.post('/movie', authenticate, async (req, res) => {
     }
 });
 
+router.get("/movie", authenticate, async (req, res) => {
+  try {
+    const Movie = require("../models").Movie;
+    const movie = await Movie.findAll();
+    res.status(200).json({
+      success: true,
+      movie,
+      message: "Fetched the movies",
+    });
+  } catch (ex) {
+    console.log(ex);
+    res.status(400).json(ex);
+  }
+});
+
 router.get('/movie/:id', authenticate, async (req, res) => {
     try {
         const Movie = require('../models').Movie;
