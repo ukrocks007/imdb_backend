@@ -610,6 +610,42 @@
 					"response": []
 				},
 				{
+					"name": "Get By Movie id Avg",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"genre\": \"Horror\",\n    \"tags\": \"test, test\",\n    \"poster\": \"b3a32c8e-2def-4882-a2d0-daeb23d99aa1\",\n    \"year\": \"2102\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2323/api/v1/rating/movie/6ba2cfa5-9fe1-4a20-8c66-b37f72c36643/avg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2323",
+							"path": [
+								"api",
+								"v1",
+								"rating",
+								"movie",
+								"6ba2cfa5-9fe1-4a20-8c66-b37f72c36643",
+								"avg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update",
 					"request": {
 						"method": "PUT",
