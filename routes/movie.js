@@ -1,8 +1,6 @@
 const Router = require('express').Router;
 const router = Router();
-const config = require('../config');
 const authenticate = require('../middleware/authenticate');
-const { dirname } = require('path');
 const fs = require('fs');
 
 router.post('/movie', authenticate, async (req, res) => {
@@ -82,6 +80,12 @@ router.put('/movie/:id', authenticate, async (req, res) => {
 router.delete('/movie/:id', authenticate, async (req, res) => {
     try {
         const Movie = require('../models').Movie;
+        const Rating = require('../models').Rating;
+        await Rating.destroy({
+          where: {
+            movie_id: req.params.id,
+          },
+        });
         const movie = await Movie.destroy({
             where: {
                 id: req.params.id,
